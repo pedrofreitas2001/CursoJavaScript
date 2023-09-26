@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background: rgb(22, 192, 22);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        } /* Neste bloco acima criei um quadrado verde no site*/
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja... 
+    </div>
+
+    <script>
+        var area = window.document.getElementById('area') /*Aqui estou fazendo ligação do elemento "area" do HTML com o JS.*/
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter',entrar)
+        area.addEventListener('mouseout', sair)
+
+        function clicar() { /*Criando uma função de clique*/
+            area.innerText = 'Clicou!' /*Após o clique, o texto mudará para "Clicou!".*/
+            area.style.background = 'red'
+        }
+        function entrar() {
+            area.innerText = "Entrou!"
+        }
+        function sair() {
+            area.innerText = "Saiu!"
+            area.style.background = 'green'
+        }
+
+    </script>
+    
+</body>
+</html>
